@@ -6,53 +6,34 @@
   <%= stylesheet_link_tag "/stylesheets/theme/bootstrap.min.css", "/stylesheets/theme/style.css", :media => 'all' %>
   <%= page_header %>
 </head>
+
 <body>
+
 	<div class="navbar">
 	  <div class="navbar-inner">
 	    <div class="container">
 	    	<div id='logo'></div>
 	    	<ul class='nav nav-tabs'>
-					<%= content_tag(:li, link_to(_('Home'), this_blog.base_url, {:class => render_active_home}))%>
-					<%= content_tag(:li, link_to(_('Articles'), {:controller => 'categories'}, {:class => render_active_articles}))%>
+					<%= content_tag(:li, link_to(_('Latest Articles'), this_blog.base_url, {:class => render_active_home}))%>
+					<%= content_tag(:li, link_to(_('Categories'), {:controller => 'categories'}, {:class => render_active_articles}))%>
 					<%= show_pages_links %>
 	      </ul>
 	    </div><!-- /.container -->
 	  </div><!-- /.navbar-inner -->
 	</div><!-- /.navbar -->
 		
-	<div id='main'>
-<!--   	  <div class='container'>
-		    <% if controller.controller_name == 'articles' and controller.action_name.include? 'index' %>
-		    <h1><%= link_to(this_blog.blog_name, this_blog.base_url) %></h1>
-        <% else %>
-        <p id='title'><%= link_to(this_blog.blog_name, this_blog.base_url) %></p>
-        <% end %>
-        <p class='subtitle'><%= this_blog.blog_subtitle %></p>
-     </div> -->
-<!--      <div class='navbar'>
-       <div class='navbar-inner'>
-         <div class='container'>
-           <ul class='nav'>
-             <%= content_tag(:li, link_to(_('Home'), this_blog.base_url, {:class => render_active_home}))%>
-             <%= content_tag(:li, link_to(_('Articles'), {:controller => 'categories'}, {:class => render_active_articles}))%>
-             <%= show_pages_links %>
-           </ul>
-         </div>
-       </div>
-     </div> -->
-	
-     <div id='page' class='container'>
-       <div class='row'>
-         <div class='span8'>
-           <%= yield %>
-         </div>
-         <div id='sidebar' class='span4'>
-           <%= render_sidebars %>
-         </div>
+	<div id='main'>	
+    	<div id='page' class='container'>
+        	<div class='row'>
+         		<div class='span8'>
+           			<%= yield %>
+         		</div>
+	         	<div id='sidebar' class='span4'>
+	           		<%= render_sidebars %>
+	         	</div>
 			</div>
-    </div>
-  </div>
-</div>
+    	</div>
+  	</div><!-- /.main -->
 
 	<div class="navbar">
 	  <div class="navbar-inner">
@@ -61,5 +42,6 @@
 	    </div><!-- /.container -->
 	  </div><!-- /.navbar-inner -->
 	</div><!-- /.navbar -->
+
 </body>
 </html>
