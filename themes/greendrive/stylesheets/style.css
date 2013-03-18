@@ -266,3 +266,12 @@ footer.footer div.bottom {
 	background-color: #ccc;
 	text-align: right;
 }
+
+h2.page-header {
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+}
+
+h2 a {
+        font-size: 24px;
+}
