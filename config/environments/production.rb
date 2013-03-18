@@ -24,6 +24,11 @@ TypoBlog::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
+  # Required for exim!
+  config.action_mailer.sendmail_settings = {
+    :arguments => "-i"
+  }
+
   # Enable threaded mode
   # config.threadsafe!
 
