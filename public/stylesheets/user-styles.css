@@ -22,3 +22,12 @@ img.right {
 	margin-right: 3px;
 	margin-bottom: 3px;
 }
+
+h2.page-header {
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+}
+
+h2 a {
+        font-size: 24px;
+}
