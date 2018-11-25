@@ -20,7 +20,7 @@ tmp/*
 /coverage/
 nbproject
 public/cache/*
-Gemfile.lock
 .rbenv-version
 bin/
 .bundle/
+.idea/

@@ -1,0 +1,21 @@
+version: '2'
+services:
+  db:
+    image: postgres:9.6.10
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db:/var/backups
+  web:
+    build: .
+    command: bundle exec rails s -p 3001 -b '0.0.0.0'
+    volumes:
+      - .:/myapp
+    expose:
+      - "3001"
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+volumes:
+  postgres_data:
+    driver: local
