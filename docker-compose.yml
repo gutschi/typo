@@ -1,7 +1,8 @@
-version: '2'
+version: '3'
+
 services:
   db:
-    image: postgres:9.6.10
+    image: postgres:11.5
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./db:/var/backups
